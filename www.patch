@@ -1,0 +1,82 @@
+diff -urB www/index.html www-new/index.html
+--- www/index.html	2017-07-17 17:39:07.724297740 +0000
++++ www-new/index.html	2017-07-18 19:01:29.858623757 +0000
+@@ -39,7 +39,7 @@
+       <img src="example.jpg" width="512" height="160" alt="just an image" />
+       <p>The reason for developing this software was the need of a simple and ressource friendly streaming application for Linux-UVC compatible webcams. The predecessor <i>uvc-streamer</i> is working well, but i wanted to implement a few more ideas. For instance, plugins can be used to process the images. One input plugin copies images to a global variable, multiple output plugins can access those images. For example this webpage is served by the <i>output_http.so</i> plugin.</p>
+ 
+-      <a href="static.html"><img src="./?action=snapshot" width="170" height="128" alt="static image example" /></a>
++      <a href="static.html"><img src="./?action=snapshot" width="240" height="135" alt="static image example" /></a>
+       <p>The image displayed here was grabbed by the input plugin. The HTTP request contains the GET parameters <i>action=snapshot</i>. This requests one single picture from the image-input. To display another example, just click on the picture.</p>
+ 
+       <h3>About the examples</h3>
+diff -urB www/java.html www-new/java.html
+--- www/java.html	2017-07-17 17:39:07.724297740 +0000
++++ www-new/java.html	2017-07-18 19:08:49.158495709 +0000
+@@ -37,7 +37,7 @@
+       <p>This example shows the stream by using a java applet. It works with any browser with java support. To see a simple example click <a href="java_simple.html">here</a>. <a href="java_control.html">Another example</a> shows how to place controls around the java-applet.</p>
+ 
+       <h3>Source snippet</h3>
+-      <p><pre>&lt;applet code="com.charliemouse.cambozola.Viewer" archive="cambozola.jar" width="512" height="384"&gt;
++      <p><pre>&lt;applet code="com.charliemouse.cambozola.Viewer" archive="cambozola.jar" width="512" height="288"&gt;
+ &lt;param name="url" value="./?action=stream"/&gt;
+ &lt;/applet&gt;</pre></p>
+ 
+diff -urB www/javascript.html www-new/javascript.html
+--- www/javascript.html	2017-07-17 17:39:07.724297740 +0000
++++ www-new/javascript.html	2017-07-18 19:12:04.688435156 +0000
+@@ -29,7 +29,7 @@
+         img.onload = imageOnload;
+         img.onclick = imageOnclick;
+         img.width = 512;
+-        img.height = 384;
++        img.height = 288;
+         img.src = "./?action=snapshot&n=" + (++imageNr);
+         var webcam = document.getElementById("webcam");
+ 		window.info = document.getElementById('info').firstChild;
+@@ -143,7 +143,7 @@
+       <h3>Hints</h3>
+         <p>This example shows the stream by using java script. It works with most browsers. To see a simple example click <a href="javascript_simple.html">here</a>.</p>
+ 
+-        <div id="webcam" style="width:512px;height:394px"><noscript><img src="./?action=snapshot" width="512px" height="384px" /></noscript></div>
++        <div id="webcam" style="width:512px;height:300px"><noscript><img src="./?action=snapshot" width="512px" height="384px" /></noscript></div>
+ 
+       <p>&copy; The <a href="http://mjpg-streamer.sf.net">MJPG-streamer team</a> | Design by <a href="http://andreasviklund.com">Andreas Viklund</a></p>
+     </div>
+diff -urB www/static.html www-new/static.html
+--- www/static.html	2017-07-17 17:39:07.734297754 +0000
++++ www-new/static.html	2017-07-18 19:03:04.578597125 +0000
+@@ -39,7 +39,7 @@
+       <h3>Source snippet</h3>
+       <p><pre>&lt;img src="./?action=snapshot" /&gt;</pre></p>
+ 
+-      <img src="./?action=snapshot" alt="This is a static snapshot" width="512px" height="384px" />
++      <img src="./?action=snapshot" alt="This is a static snapshot" width="512px" height="288px" />
+ 
+       <p>&copy; The <a href="http://mjpg-streamer.sf.net">MJPG-streamer team</a> | Design by <a href="http://andreasviklund.com">Andreas Viklund</a></p>
+     </div>
+diff -urB www/style.css www-new/style.css
+--- www/style.css	2017-07-17 17:39:07.734297754 +0000
++++ www-new/style.css	2017-07-18 19:07:30.088519591 +0000
+@@ -83,7 +83,7 @@
+ {clear:both; margin:30px 0 10px 0; color:#d85d5d; font-weight:normal; font-size: 2em; letter-spacing:-2px;}
+ 
+ #streamimage {
+-width:520px; height: 390px;
++width:520px; height: 288px;
+ }
+ 
+ #xform {
+@@ -91,10 +91,10 @@
+ 	margin:0 !important;
+ }
+ #streamwrap {
+-	height:350px
++	height:288px;
+ }
+ #streamwrap.rotated {
+-	height:450px
++	height:450px;
+ }
+ p.xform-p {
+ 	height:5px;

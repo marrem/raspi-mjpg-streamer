@@ -1,0 +1,15 @@
+[Unit]
+Description=Camera mjpg-streamer service
+After=network.target
+
+[Service]
+EnvironmentFile=/etc/default/mjpg-streamer
+Type=simple
+User=webcam
+ExecStart=/usr/local/bin/mjpg_streamer -i ${INPUT_OPTS} -o ${OUTPUT_OPTS}
+KillMode=process
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+
